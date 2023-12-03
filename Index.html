@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/fb74548cd7.js"
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Style.css" />
+    <title>BookShelf</title>
+  </head>
+  <body>
+    <div class="wrap-tab">
+      <button
+        class="tab-button"
+        id="tab-button1"
+        onclick="openTab('tab1', 'tab-button1')">
+        Selesai Dibaca
+      </button>
+      <button
+        class="tab-button"
+        id="tab-button2"
+        onclick="openTab('tab2', 'tab-button2')">
+        Belum Selesai Dibaca
+      </button>
+      <button onclick="openModal()" class="add-book">+</button>
+    </div>
+
+    <div class="wrap">
+      <div id="tab1" class="shelf tab-content">
+        <div class="board finishedReading"></div>
+      </div>
+
+      <div id="tab2" class="shelf tab-content">
+        <div class="board unFinishedReading"></div>
+      </div>
+    </div>
+
+    <div id="myModal">
+      <div id="modal-content">
+        <h2 align="center">Tambah Data Buku</h2>
+        <div class="modal-field">
+          <label for="title">Title</label>
+          <input type="text" id="title" placeholder="Masukkan judul buku" />
+        </div>
+        <div class="modal-field">
+          <label for="author">Author</label>
+          <input
+            type="text"
+            id="author"
+            placeholder="Masukkan nama pembuat buku" />
+        </div>
+        <div class="modal-field">
+          <label for="year">Tahun</label>
+          <input
+            type="number"
+            id="year"
+            placeholder="Masukkan tahun buku cth: 1997" />
+        </div>
+        <div class="action">
+          <button onclick="closeModal()">Batal</button>
+          <button class="addBook">Tambah</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="modalDetail">
+      <div id="detail-content">
+        <img src="./Assets/ImageDefault.jpg" class="img-detail" alt="" />
+        <div class="detail">
+          <h2 align="center" class="title-detail">CSS Trick</h2>
+          <div class="items">
+            <span>Author</span>
+            <span class="author">Rifki Nur Ikhwan</span>
+          </div>
+          <div class="items">
+            <span>Tahun</span>
+            <span class="tahun">1997</span>
+          </div>
+          <div class="items">
+            <span>Status</span>
+            <span class="status-badge">Belum selesai dibaca </span>
+          </div>
+          <div class="action-detail">
+            <button class="status-button">Selesai Dibaca</button>
+            <button class="delete-button" onclick="openModalDelete()">
+              Hapus Buku
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-delete">
+      <div id="detail-delete">
+        <i class="fa-solid fa-circle-info icon"></i>
+        <p>Yakin mau menghapus buku ini?</p>
+        <div class="action-delete">
+          <button class="dismiss-del" onclick="closeModalDelete()">
+            Tidak
+          </button>
+          <button class="accept-del">Ya</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="Script.js"></script>
+  </body>
+</html>
